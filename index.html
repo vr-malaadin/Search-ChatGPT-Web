@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Search</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/?size=256&id=FBO05Dys9QCg&format=png">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background-color: #FFFFFF; /* White background */
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #000000; /* Black text */
+            user-select: none; /* Disable selection for all elements */
+        }
+
+        .search-container {
+            background: #F4F4F4; /* Light gray background */
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            user-select: auto; /* Allow selection only for the input */
+        }
+
+        h1 {
+            color: #007AFF; /* Blue color */
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .search-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            padding-right: 3rem;
+            border: 2px solid #5D5D5D; /* Medium gray for borders */
+            border-radius: 24px;
+            font-size: 1.125rem;
+            transition: all 0.2s;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: #007AFF; /* Blue on focus */
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+        }
+
+        .option-group {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .checkbox-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            user-select: auto; /* Allow checkbox label selection */
+        }
+
+        .checkbox-input {
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 4px;
+            border: 2px solid #5D5D5D; /* Medium gray for checkboxes */
+            cursor: pointer;
+        }
+
+        .search-button {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            background-color: #007AFF; /* Blue background */
+            color: white;
+            border: none;
+            border-radius: 24px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .search-button:hover {
+            background-color: #005BB5; /* Darker blue on hover */
+        }
+
+        .search-button:active {
+            background-color: #004A91; /* Even darker blue on active */
+        }
+
+        .search-input::placeholder {
+            color: #5D5D5D; /* Medium gray for placeholder */
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+
+            .search-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Search ChatGPT</h1>
+        <form onsubmit="event.preventDefault(); performSearch();">
+            <div class="search-group">
+                <input 
+                    type="text" 
+                    id="searchQuery" 
+                    name="searchQuery" 
+                    class="search-input"
+                    placeholder="Enter your search query for ChatGPT..."
+                    required
+                    autocomplete="off"
+                    autofocus
+                >
+            </div>
+
+            <div class="option-group">
+                <!-- Use Web Checkbox -->
+                <div class="checkbox-wrapper">
+                    <input 
+                        type="checkbox" 
+                        id="useWeb" 
+                        name="useWeb" 
+                        class="checkbox-input"
+                        checked
+                    >
+                    <label for="useWeb">Use Web</label>
+                </div>
+
+                <!-- Temporary Chat Checkbox -->
+                <div class="checkbox-wrapper">
+                    <input 
+                        type="checkbox" 
+                        id="temporaryChat" 
+                        name="temporaryChat" 
+                        class="checkbox-input"
+                        checked
+                    >
+                    <label for="temporaryChat">Temporary Chat</label>
+                </div>
+            </div>
+
+            <button type="submit" class="search-button">
+                Search
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function performSearch() {
+            const query = document.getElementById('searchQuery').value;
+            const useWeb = document.getElementById('useWeb').checked;
+            const temporaryChat = document.getElementById('temporaryChat').checked;
+            
+            let url = 'https://chatgpt.com/?';
+            
+            if (useWeb) {
+                url += 'hints=search';
+            }
+
+            url += `&q=${encodeURIComponent(query)}`;
+            
+            if (temporaryChat) {
+                url += '&temporary-chat=true';
+            }
+
+            window.open(url, '_blank'); // Opens in new tab
+        }
+    </script>
+</body>
+</html>
