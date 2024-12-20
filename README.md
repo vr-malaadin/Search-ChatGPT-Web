@@ -2,15 +2,14 @@
 
 A responsive web interface for searching ChatGPT with customizable options for using web-based hints and temporary chat sessions.
 
+![image](https://github.com/user-attachments/assets/27814cfa-befa-4fff-a2cd-f334a53a2cd6)
+
 ## Features
 - **Search Query Input**: Users can enter their queries easily.
 - **Toggleable Options**:
   - **Use Web**: Enables web-based hints for better results.
   - **Temporary Chat**: Activates temporary sessions for ephemeral interactions.
 - **Responsive Design**: Optimized for all screen sizes.
-
-  ![image](https://github.com/user-attachments/assets/27814cfa-befa-4fff-a2cd-f334a53a2cd6)
-
 
 ## Technologies Used
 - **HTML**: Provides the structural framework.
@@ -19,5 +18,27 @@ A responsive web interface for searching ChatGPT with customizable options for u
 
 ## How to Use
 1. Clone this repository:
-   ```bash
+   ```
    git clone https://github.com/vr-malaadin/Search-ChatGPT-Web.git
+   ```
+2. Navigate to the project folder:
+   ```
+   cd Search-ChatGPT-Web
+   ```
+3. Open `index.html` in any web browser.
+4. Enter a query, adjust the options, and click "Search" to open the results in a new tab.
+
+## Customization
+- **Style Updates**: Modify the CSS styles within the `style` section of `index.html`.
+- **Search Behavior**: Update the `performSearch` function in the `<script>` section to enhance the search functionality.
+
+## License
+This project is licensed under the MIT License. Feel free to use and modify it.
+
+## Contributions
+Contributions are welcome! Fork the repository and submit a pull request for improvements.
+
+---
+
+**Author**: Mahdi
+
