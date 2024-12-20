@@ -11,6 +11,9 @@ A responsive web interface for searching ChatGPT with customizable options for u
   - **Temporary Chat**: Activates temporary sessions for ephemeral interactions.
 - **Responsive Design**: Optimized for all screen sizes.
 
+## Live Demo
+Check out the live version of this project: [Search ChatGPT Web](https://vr-malaadin.github.io/Search-ChatGPT-Web/)
+
 ## Technologies Used
 - **HTML**: Provides the structural framework.
 - **CSS**: Styles the interface with a clean and modern look.
